@@ -14,9 +14,7 @@ $(document).ready(function(){
 
 
   	var compGuess = Math.floor((Math.random() * 100) + 1);
-  	
-
-  	
+  	var counter = 0;
 
   	
 
@@ -26,7 +24,8 @@ $(document).ready(function(){
 		var guessDifference = absDifference(compGuess, userGuess1);
 		function absDifference (a, b) {
   		return Math.abs(a - b);
-  	};
+  		};
+  		counter++;
   		console.log(compGuess);
   		console.log(userGuess1);
   		if (guessDifference === 0){
@@ -38,6 +37,7 @@ $(document).ready(function(){
   		};
 
   		$("#guessList").prepend('<li>' + userGuess1 + '</li>');
+  		$("span#count").html(counter);
   		  	})
 
   	/*---Start a new game---*/
